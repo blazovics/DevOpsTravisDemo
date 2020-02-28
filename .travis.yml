@@ -6,3 +6,4 @@ script:
 - cd DevOpsDemo
 - dotnet restore
 - dotnet build
+- dotnet test DevOpsDemo_Tests/DevOpsDemo_Tests.csproj
