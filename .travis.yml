@@ -9,6 +9,9 @@ script:
 - dotnet test DevOpsDemo_Tests/DevOpsDemo_Tests.csproj
 deploy:
   provider: releases
+  skip_cleanup: true
+  file_glob: true
+  file: /home/travis/build/blazovics/DevOpsTravisDemo/DevOpsDemo/DevOpsDemo/bin/Debug/*
   on:
     branch: develop
   token:
