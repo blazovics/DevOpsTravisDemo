@@ -9,3 +9,6 @@ script:
 - dotnet test DevOpsDemo_Tests/DevOpsDemo_Tests.csproj
 deploy:
   provider: releases
+  on:
+    branch: develop
+  
