@@ -1,0 +1,16 @@
+language: csharp
+mono: none
+dotnet: 3.1
+solution: DevOpsDemo.sln
+script:
+- cd DevOpsDemo
+- dotnet restore
+- dotnet build
+- dotnet test DevOpsDemo_Tests/DevOpsDemo_Tests.csproj
+deploy:
+  provider: releases
+  skip_cleanup: true
+  file_glob: true
+  file: /home/travis/build/blazovics/DevOpsTravisDemo/DevOpsDemo/DevOpsDemo/bin/Debug/netcoreapp3.1/*
+  token:
+    secure: Zx9fNc4jnD0kqzcKS+YEhHr8lZUdySbltw8+RoyijzvQ3U2gmj2StoR60gfcW0xgvOIoppW7htz1JwdChOHNm/fzwTI2jlsZMqHQS/lzIpx4nzb/fq+DWKSEUppNMjkil0ESFbCB/6YNTanRDvbqf8eS16z978g9+fWgJA8m0Ccjix3xgtOmxj3b9DH0l5krPAs7Zo9d31ULmV4cFAjwSYo89oNvFdvB65UmCfp9WAWChVJaJ+4d6ksOA17Yycx0HZhuu9oNBusZEvS+MC+Dss9swkXg2JDysqzac1R17kPsAhIc9REd1zQNy/bclJ2uXfBQn5F3+iAaEp25TpTn7QURBNWq2AgODb21k+M4lNKof2nlxlVKb6DqUHxV1Pk/j+uVhDVkfSMrX0S8FGD44/8zhPpEDevC55S/b/FpjroJwKni2XZ07+2TP9M/k0la8ONW99d7g1JLcxNwLelpQEgeqT66poaQiFKf9wsxB54IzGPu+HRfmji0r14fGVUDwM08hQWdIRAwzYH2dc7kFeaZ9WFvYB+4vjAnboOidNigii5q/iDp1JLxeRGrD58oqDsHPcacteV/kSJsoKOq958r5HrcXPwObg2034ElPhfJsNphAnVkTlPCRt3o/8z6pgYWgEfUHk1br1lTP++nwYcDfoHB3fBeDSv5KIyY378=
