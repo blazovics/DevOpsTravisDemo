@@ -11,4 +11,5 @@ deploy:
   provider: releases
   on:
     branch: develop
+  token: 82c2f66770efdcae92fe722525ed2f0c9441eea9
   
